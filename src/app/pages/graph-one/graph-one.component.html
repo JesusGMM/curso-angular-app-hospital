@@ -1,1 +1,12 @@
-<p>graph-one works!</p>
+<div class="row">
+	<div class="col-6" *ngFor="let item of graficos">
+		<div class="card">
+			<div class="card-body p-2">
+
+				<app-grafica [pieChartType]="item.type" [data]="item.data" [labels]="item.labels"
+					[title]="item.leyenda"></app-grafica>
+
+			</div>
+		</div>
+	</div>
+</div>
