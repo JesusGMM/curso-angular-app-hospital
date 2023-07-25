@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
+
+declare function init_plugins(): any;
 
 @Component({
 	standalone: true,
@@ -7,14 +10,21 @@ import { RouterModule } from '@angular/router';
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.css'],
 	imports: [
-		RouterModule
+		RouterModule,
+		FormsModule
 	]
 })
 export class LoginComponent implements OnInit {
 
-	constructor() { }
+	constructor(private router: Router) { }
 
 	ngOnInit(): void {
+		init_plugins()
+	}
+
+	ingresar() {
+		console.log('hola');
+		this.router.navigate(['/dashboard']);
 	}
 
 }

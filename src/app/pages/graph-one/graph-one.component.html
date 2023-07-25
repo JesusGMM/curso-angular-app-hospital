@@ -1,7 +1,7 @@
 <div class="row">
-	<div class="col-6" *ngFor="let item of graficos">
-		<div class="card">
-			<div class="card-body p-2">
+	<div class="col-12 col-md-6 mb-2" *ngFor="let item of graficos">
+		<div class="card h-100 bg-light">
+			<div class="card-body">
 
 				<app-grafica [pieChartType]="item.type" [data]="item.data" [labels]="item.labels"
 					[title]="item.leyenda"></app-grafica>
